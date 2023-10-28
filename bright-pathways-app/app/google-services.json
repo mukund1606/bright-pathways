@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "269472719372",
+    "project_id": "brightpathways-4b0da",
+    "storage_bucket": "brightpathways-4b0da.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:269472719372:android:654fa8f3a87099efb48429",
+        "android_client_info": {
+          "package_name": "com.asprograms.brightpathways"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBGnkq6VyGqrbx-MuwyxOIPAYdAE32zVUM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
