@@ -23,11 +23,11 @@ Organisation:
         - ANIMAL_CARE
         - ADOPTION_CENTER
         - SPECIAL_SCHOOLS
-    username:
-      type: string
     phone:
       type: string
     address:
       type: string
     coordinates:
+      type: string
+    description:
       type: string
