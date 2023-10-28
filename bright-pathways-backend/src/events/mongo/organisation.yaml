@@ -1,0 +1,104 @@
+# ONE
+http.get./mongo/organisation/{id}:
+  summary: Fetch Organisation
+  description: Fetch Organisation from database
+  fn: com.biz.mongo.organisation.one
+  params:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    content:
+      application/json:
+        schema:
+          type: object
+
+# ONE BY EMAIL
+http.get./mongo/organisation/email/{email}:
+  summary: Fetch Organisation
+  description: Fetch Organisation from database
+  fn: com.biz.mongo.organisation.email_one
+  params:
+    - name: email
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    content:
+      application/json:
+        schema:
+          type: object
+
+# CREATE
+http.post./mongo/organisation:
+  summary: Create a new Organisation
+  description: Create Organisation from database
+  fn: com.biz.mongo.organisation.create
+  body:
+    content:
+      application/json:
+        schema:
+          $ref: '#/definitions/mongo/Organisation'
+  responses:
+    content:
+      application/json:
+        schema:
+          type: object
+
+# UPDATE
+http.put./mongo/organisation/{id}:
+  summary: Update a Organisation
+  description: Update Organisation from database
+  fn: com.biz.mongo.organisation.update
+  body:
+    content:
+      application/json:
+        schema:
+          $ref: '#/definitions/mongo/Organisation'
+  params:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    content:
+      application/json:
+        schema:
+          type: object
+
+# DELETE
+http.delete./mongo/organisation/{id}:
+  summary: Delete a Organisation
+  description: Delete Organisation from database
+  fn: com.biz.mongo.organisation.delete
+  params:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    content:
+      application/json:
+        schema:
+          type: object
+
+# SEARCH
+http.post./mongo/organisation/search:
+  summary: Fetch multiple Organisation
+  description: Fetch multiple Organisation from database
+  fn: com.biz.mongo.organisation.search
+  body:
+    content:
+      application/json:
+        schema:
+          type: object
+  responses:
+    content:
+      application/json:
+        schema:
+          type: array

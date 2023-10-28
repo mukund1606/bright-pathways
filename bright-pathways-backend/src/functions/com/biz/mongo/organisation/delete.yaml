@@ -1,0 +1,7 @@
+summary: Delete Organisation
+tasks:
+  - id: mongo_organisation_delete
+    fn: datasource.mongo.Organisation.delete
+    args:
+      where:
+        id: <% inputs.params.id %>

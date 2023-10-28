@@ -1,0 +1,33 @@
+User:
+  type: object
+  properties:
+    name:
+      type: string
+    email:
+      type: string
+    password:
+      type: string
+Organisation:
+  type: object
+  properties:
+    name:
+      type: string
+    email:
+      type: string
+    password:
+      type: string
+    type:
+      type: string
+      enum:
+        - OLDAGE_HOME
+        - ANIMAL_CARE
+        - ADOPTION_CENTER
+        - SPECIAL_SCHOOLS
+    username:
+      type: string
+    phone:
+      type: string
+    address:
+      type: string
+    coordinates:
+      type: string

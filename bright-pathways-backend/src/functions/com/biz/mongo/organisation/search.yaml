@@ -1,0 +1,5 @@
+summary: Fetch many Organisation
+tasks:
+  - id: mongo_organisation_search
+    fn: datasource.mongo.Organisation.findMany
+    args: {}

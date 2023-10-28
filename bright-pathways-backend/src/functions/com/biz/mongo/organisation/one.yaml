@@ -1,0 +1,7 @@
+summary: Fetch Organisation
+tasks:
+  - id: mongo_organisation_one
+    fn: datasource.mongo.Organisation.findUnique
+    args:
+      where:
+        id: <% inputs.params.id %>

@@ -1,0 +1,6 @@
+summary: Create Organisation
+tasks:
+  - id: mongo_organisation_create
+    fn: datasource.mongo.Organisation.create
+    args:
+      data: <% inputs.body %>

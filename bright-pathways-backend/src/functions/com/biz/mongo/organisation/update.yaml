@@ -1,0 +1,8 @@
+summary: Update Organisation
+tasks:
+  - id: mongo_organisation_update
+    fn: datasource.mongo.Organisation.update
+    args:
+      where:
+        id: <% inputs.params.id %>
+      data: <% inputs.body %>
