@@ -22,7 +22,9 @@ export default function HeroSection() {
           <Link href="/oldage-home">
             <Button className="bg-[#A4D5DD]">Explore</Button>
           </Link>
-          <Button className="bg-[#A4D5DD]">Download App</Button>
+          <Link href="https://github.com/mukund1606/bright-pathways/releases/download/v1.0.0/bright-pathways-installer.apk">
+            <Button className="bg-[#A4D5DD]">Download App</Button>
+          </Link>
         </div>
       </div>
       <div className="flex h-full items-center justify-center border border-white pt-8 md:w-6/12">

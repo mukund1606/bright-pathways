@@ -6,7 +6,7 @@ import { api } from "@/trpc/server";
 async function OldAgeHomePage() {
   const data = await api.organisations.getOldAgeHomes.mutate();
   return (
-    <div className="flex flex-col gap-8 px-8 pt-24">
+    <div className="flex flex-col gap-8 px-8 pb-4 pt-36">
       <h1 className="text-center text-4xl font-bold">Old Age Homes</h1>
       <SearchElement data={data} />
       <MapElement
