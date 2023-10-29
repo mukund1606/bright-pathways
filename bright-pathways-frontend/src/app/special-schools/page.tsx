@@ -7,6 +7,7 @@ async function AnimalCarePage() {
   return (
     <div className="flex flex-col gap-8 px-8 pt-24">
       <h1 className="text-center text-4xl font-bold">Special Schools</h1>
+      <SearchElement data={data} />
       <MapElement
         markers={data.map((home) => {
           return {
@@ -20,7 +21,6 @@ async function AnimalCarePage() {
           };
         })}
       />
-      <SearchElement data={data} />
     </div>
   );
 }
