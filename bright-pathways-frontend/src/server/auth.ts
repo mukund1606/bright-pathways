@@ -154,7 +154,7 @@ export const authOptions: NextAuthOptions = {
                 type: "user",
               };
             }
-          } else if (credentials.role === "organiorganisation") {
+          } else if (credentials.role === "organisation") {
             const res = await axios.get(
               `https://bright-pathways-backend.onrender.com/mongo/organisation/email/${credentials.email}`,
             );

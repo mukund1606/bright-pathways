@@ -26,7 +26,7 @@ function SignIn() {
   );
 
   return (
-    <div className="flex h-screen w-screen items-center justify-center">
+    <div className="flex min-h-screen w-screen items-center justify-center py-4 pt-24">
       <Card className="w-96 px-4">
         <CardHeader className="text-center">
           <h2 className="text-4xl font-bold">Sign In</h2>
@@ -96,10 +96,10 @@ function SignIn() {
                     .catch((err) => console.log(err));
                 }}
               >
-                SignIn
+                Sign In
               </Button>
               <Link href="/auth/signup" className="w-full">
-                <Button className="w-full bg-[#A4D5DD]">SignUp</Button>
+                <Button className="w-full bg-[#A4D5DD]">Sign Up</Button>
               </Link>
             </div>
           </div>

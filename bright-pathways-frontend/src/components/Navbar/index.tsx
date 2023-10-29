@@ -1,6 +1,7 @@
 import { getServerAuthSession } from "@/server/auth";
 import { Button, Link } from "@nextui-org/react";
 import MobileNav from "./mobileNav";
+import SignOutButton from "../SignOutButton";
 
 export const Navbar = async () => {
   const session = await getServerAuthSession();
@@ -42,9 +43,7 @@ export const Navbar = async () => {
         <div className="flex items-center gap-2">
           <div>
             {session ? (
-              <Link href="/api/auth/signout">
-                <Button>Logout</Button>
-              </Link>
+              <SignOutButton />
             ) : (
               <Link href="/auth/signin">
                 <Button>Login</Button>

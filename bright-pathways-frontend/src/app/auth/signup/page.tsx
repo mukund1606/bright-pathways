@@ -50,7 +50,7 @@ function SignUp() {
   );
 
   return (
-    <div className="flex h-screen w-screen items-center justify-center">
+    <div className="flex min-h-screen w-screen items-center justify-center py-4 pt-24">
       <Card className="px-4">
         <CardHeader className="text-center">
           <h2 className="text-3xl font-bold">Sign Up</h2>
