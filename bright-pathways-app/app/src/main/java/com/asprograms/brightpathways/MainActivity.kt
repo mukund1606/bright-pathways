@@ -20,6 +20,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun switchToSignUp(view: View) {
-    startActivity(Intent(this, SignUpActivity::class.java))
+        startActivity(Intent(this, SignUpActivity::class.java))
     }
 }

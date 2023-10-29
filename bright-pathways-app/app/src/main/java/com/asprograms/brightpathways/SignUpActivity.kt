@@ -16,9 +16,7 @@ class SignUpActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up)
         window.statusBarColor = Color.parseColor("#FFFFFF")
-
     }
-
 
     fun signUpUser(view: View) {
         val name = findViewById<EditText>(R.id.userName)
@@ -32,8 +30,8 @@ class SignUpActivity : AppCompatActivity() {
                 // User registration successful
                 Toast.makeText(applicationContext, "Welcome $name!", Toast.LENGTH_LONG).show()
                 // You can do something with the user here
-                Firebase.database.getReference(findViewById<EditText>(R.id.userEmail).text.toString().split("@")[0].replace(".", "") + "/Alive")
-                    .setValue("Yes")
+                Firebase.database.getReference(findViewById<EditText>(R.id.userEmail).text.toString().split("@")[0].replace(".", "") + "/Name")
+                    .setValue("${findViewById<EditText>(R.id.userName).text}")
                 Toast.makeText(applicationContext, "SignUp Successful!", Toast.LENGTH_LONG)
                     .show()
                 finish()
@@ -50,6 +48,11 @@ class SignUpActivity : AppCompatActivity() {
 
     fun switchToLogin(view: View) {
         startActivity(Intent(this, LoginActivity::class.java))
+        finish()
+    }
+
+    fun switchToOrgRegistration(view: View) {
+        startActivity(Intent(this, RegisterOrgActivity::class.java))
         finish()
     }
 }

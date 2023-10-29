@@ -126,6 +126,7 @@
                 android:layout_height="30dp"
                 android:layout_marginLeft="10dp"
                 android:backgroundTint="@color/grey"
+                android:onClick="setCurrentToSpecialSchools"
                 app:cardCornerRadius="100dp"
                 app:cardElevation="0dp"
                 app:contentPadding="2dp">
@@ -142,7 +143,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:text="Blind Schools"
+                        android:text="Special Schools"
                         android:textColor="@color/black" />
                 </androidx.cardview.widget.CardView>
             </androidx.cardview.widget.CardView>
@@ -225,7 +226,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
             android:layout_marginEnd="24dp"
-            android:text="We serve a platform to the users as well as the owners of the organisations to post the information about them.  <b> The <b>"
+            android:text="We serve a platform to the users to find their perfect solutions, as well as the owners of the organisations to post the information about them.  The"
             android:textColor="#555555"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/textView4"
@@ -233,6 +234,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <HorizontalScrollView
+        android:id="@+id/horizontalScrollView3"
         android:layout_width="409dp"
         android:layout_height="300dp"
         android:layout_marginTop="16dp"
@@ -359,27 +361,20 @@
                         android:layout_width="200dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:text="Empowering the specially abled who can't see but think faster, with the blind schools associated with us."
+                        android:text="Empowering the specially abled who can't see or can't hear normally, but think faster, with the special schools associated with us."
+                        android:textColor="#555555"
                         app:layout_constraintStart_toStartOf="@+id/textView22"
                         app:layout_constraintTop_toBottomOf="@+id/textView22" />
-
-                    <ImageView
-                        android:id="@+id/imageView6"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:layout_marginTop="16dp"
-                        android:layout_marginEnd="-28dp"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        tools:srcCompat="@drawable/res_image2" />
 
                     <Button
                         android:id="@+id/button9"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
                         android:backgroundTint="@color/green"
-                        android:text="Button"
+                        android:text="Register"
                         android:textColor="#000000"
+                        app:cornerRadius="10dp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/textView23" />
 
@@ -388,12 +383,66 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:backgroundTint="@color/white"
-                        android:text="Button"
+                        android:text="Visit Section"
                         android:textColor="#000000"
-                        app:layout_constraintEnd_toEndOf="parent"
+                        app:cornerRadius="10dp"
+                        app:layout_constraintEnd_toEndOf="@+id/button9"
                         app:layout_constraintTop_toBottomOf="@+id/button9" />
+
+                    <ImageView
+                        android:id="@+id/imageButton2"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="4dp"
+                        android:elevation="5dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView23"
+                        app:srcCompat="@drawable/res_image3" />
+
+                    <ImageView
+                        android:id="@+id/imageView6"
+                        android:layout_width="80dp"
+                        android:layout_height="100dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="-5dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/res_image2" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
         </LinearLayout>
     </HorizontalScrollView>
+
+    <Button
+        android:id="@+id/button13"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="24dp"
+        android:backgroundTint="@color/black"
+        android:onClick="switchToOrgRegistration"
+        android:text="Add your organisation"
+        android:textColor="@color/white"
+        app:cornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/button12"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:backgroundTint="@color/grey"
+        android:text="Give your valuable feedback"
+        android:textColor="@color/black"
+        app:cornerRadius="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/button13"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
