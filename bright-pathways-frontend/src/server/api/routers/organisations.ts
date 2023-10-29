@@ -16,7 +16,7 @@ type Data = {
 export const organisationsRouter = createTRPCRouter({
   getOldAgeHomes: publicProcedure.mutation(async () => {
     const res = await axios.post(
-      "http://localhost:5000/mongo/organisation/search",
+      "https://bright-pathways-backend.onrender.com/mongo/organisation/search",
     );
     const data = res.data as Data[];
     return data
@@ -37,7 +37,7 @@ export const organisationsRouter = createTRPCRouter({
   }),
   getAnimalCare: publicProcedure.mutation(async () => {
     const res = await axios.post(
-      "http://localhost:5000/mongo/organisation/search",
+      "https://bright-pathways-backend.onrender.com/mongo/organisation/search",
     );
     const data = res.data as Data[];
     return data
@@ -58,7 +58,7 @@ export const organisationsRouter = createTRPCRouter({
   }),
   getAdoptionCenters: publicProcedure.mutation(async () => {
     const res = await axios.post(
-      "http://localhost:5000/mongo/organisation/search",
+      "https://bright-pathways-backend.onrender.com/mongo/organisation/search",
     );
     const data = res.data as Data[];
     return data
@@ -79,7 +79,7 @@ export const organisationsRouter = createTRPCRouter({
   }),
   getSpecialSchool: publicProcedure.mutation(async () => {
     const res = await axios.post(
-      "http://localhost:5000/mongo/organisation/search",
+      "https://bright-pathways-backend.onrender.com/mongo/organisation/search",
     );
     const data = res.data as Data[];
     return data
