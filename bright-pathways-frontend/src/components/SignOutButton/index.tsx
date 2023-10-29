@@ -5,7 +5,7 @@ import { signOut } from "next-auth/react";
 function SignOutButton() {
   return (
     <Button
-      onClick={() => signOut({ redirect: false, callbackUrl: "/" })}
+      onClick={() => signOut({ callbackUrl: "/" })}
       className="w-full bg-[#A4D5DD]"
     >
       Logout

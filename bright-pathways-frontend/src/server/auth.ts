@@ -33,6 +33,7 @@ declare module "next-auth" {
     address?: string;
     coordinates?: [number, number];
     description?: string;
+    documents?: string[];
   }
 }
 
@@ -57,6 +58,7 @@ declare module "next-auth/jwt" {
     address?: string;
     coordinates?: [number, number];
     description?: string;
+    documents?: string[];
   }
 }
 
@@ -77,6 +79,7 @@ type orgDataType = {
   address: string;
   coordinates: [number, number];
   description: string;
+  documents: string[];
 };
 
 /**
@@ -139,13 +142,18 @@ export const authOptions: NextAuthOptions = {
           type: "text",
           placeholder: "Is Login",
         },
+        documents: {
+          label: "Documents",
+          type: "text",
+          placeholder: "Documents",
+        },
       },
       async authorize(credentials) {
         if (!credentials) return null;
         if (credentials.isLogin === "true") {
           if (credentials.role === "user") {
             const res = await axios.get(
-              `https://bright-pathways-backend.onrender.com/mongo/user/email/${credentials.email}`,
+              `http://localhost:5000/mongo/user/email/${credentials.email}`,
             );
             const user = res.data as userDataType;
             if (user.password === credentials.password) {
@@ -156,7 +164,7 @@ export const authOptions: NextAuthOptions = {
             }
           } else if (credentials.role === "organisation") {
             const res = await axios.get(
-              `https://bright-pathways-backend.onrender.com/mongo/organisation/email/${credentials.email}`,
+              `http://localhost:5000/mongo/organisation/email/${credentials.email}`,
             );
             const user = res.data as orgDataType;
             if (user.password === credentials.password) {
@@ -175,7 +183,7 @@ export const authOptions: NextAuthOptions = {
               password: credentials.password,
             };
             const res = await axios.post(
-              `https://bright-pathways-backend.onrender.com/mongo/user`,
+              `http://localhost:5000/mongo/user`,
               dataToSend,
             );
             const user = res.data as userDataType;
@@ -195,9 +203,10 @@ export const authOptions: NextAuthOptions = {
               coordinates: credentials.coordinates,
               description: credentials.description,
               type: credentials.orgType,
+              documents: credentials.documents,
             };
             const res = await axios.post(
-              `https://bright-pathways-backend.onrender.com/mongo/organisation`,
+              `http://localhost:5000/mongo/organisation`,
               dataToSend,
             );
             const user = res.data as orgDataType;
@@ -211,6 +220,7 @@ export const authOptions: NextAuthOptions = {
               address: user.address,
               coordinates: user.coordinates,
               description: user.description,
+              documents: user.documents,
             };
           }
         }
@@ -236,6 +246,7 @@ export const authOptions: NextAuthOptions = {
           orgType: token.orgType,
           phone: token.phone,
           type: token.type,
+          documents: token.documents,
         };
       }
       return session;
@@ -252,6 +263,7 @@ export const authOptions: NextAuthOptions = {
           orgType: user.orgType,
           phone: user.phone,
           type: user.type,
+          documents: user.documents,
         };
         return Promise.resolve(data);
       } else {
@@ -265,6 +277,7 @@ export const authOptions: NextAuthOptions = {
           orgType: token.orgType,
           phone: token.phone,
           type: token.type,
+          documents: token.documents,
         };
         return Promise.resolve(data);
       }

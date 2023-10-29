@@ -13,6 +13,7 @@ import { useMemo, useState } from "react";
 import { signIn } from "next-auth/react";
 import Link from "next/link";
 import { LocateIcon } from "lucide-react";
+import { UploadButton } from "@/utils/uploadthing";
 
 type Credentials = {
   name: string;
@@ -28,6 +29,7 @@ type Credentials = {
   phone?: string;
   description?: string;
   address?: string;
+  documents?: string[];
 };
 function SignUp() {
   const [selectedKeys, setSelectedKeys] = useState(new Set(["user"]));
@@ -212,6 +214,34 @@ function SignUp() {
                     })
                   }
                 />
+                <div>
+                  <p className="text-center">
+                    Kindly Upload a Government Issued Document for Verification
+                  </p>
+                  <UploadButton
+                    endpoint="imageUploader"
+                    onClientUploadComplete={(res) => {
+                      const files = res as {
+                        fileKey: string;
+                        fileName: string;
+                        fileSize: number;
+                        fileUrl: string;
+                        key: string;
+                        name: string;
+                        size: number;
+                        url: string;
+                      }[];
+                      setCredentials({
+                        ...credentials,
+                        documents: files.map((file) => file.fileKey),
+                      });
+                      alert("Upload Completed");
+                    }}
+                    onUploadError={(error: Error) => {
+                      alert(`ERROR! ${error.message}`);
+                    }}
+                  />
+                </div>
               </>
             )}
             <div className="flex items-center justify-center gap-2">
@@ -238,7 +268,10 @@ function SignUp() {
                       !credentials.address ||
                       !credentials.orgType ||
                       !credentials.phone ||
-                      !credentials.description)
+                      !credentials.description ||
+                      !credentials.documents ||
+                      !credentials.coordinates ||
+                      credentials.documents.length === 0)
                   ) {
                     alert("Please fill all the fields");
                     return;
@@ -256,6 +289,7 @@ function SignUp() {
                     phone: credentials.phone,
                     description: credentials.description,
                     address: credentials.address,
+                    documents: JSON.stringify(credentials.documents),
                     coordinates: JSON.stringify(credentials.coordinates),
                     isLogin: "false",
                     callbackUrl: "/",

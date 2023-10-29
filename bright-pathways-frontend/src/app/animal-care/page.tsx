@@ -1,4 +1,5 @@
-import MapElement from "@/components/Map";
+import dynamic from "next/dynamic";
+const MapElement = dynamic(() => import("@/components/Map"), { ssr: false });
 import SearchElement from "@/components/Search";
 import { api } from "@/trpc/server";
 

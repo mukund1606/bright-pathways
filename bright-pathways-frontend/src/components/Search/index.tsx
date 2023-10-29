@@ -2,7 +2,7 @@
 
 import { Input } from "@nextui-org/react";
 import { useState } from "react";
-import { Card, CardHeader, CardBody } from "@nextui-org/react";
+import { Link, Card, CardHeader, CardBody } from "@nextui-org/react";
 
 type SearchElementProps = {
   coordinates: [number, number];
@@ -13,6 +13,7 @@ type SearchElementProps = {
   phone: string;
   address: string;
   description: string;
+  documents: string[];
 }[];
 
 function SearchElement({ data }: { data: SearchElementProps }) {
@@ -65,6 +66,20 @@ function SearchElement({ data }: { data: SearchElementProps }) {
                   <span className="font-bold">Description:</span>
                   {value.description}
                 </p>
+                <div>
+                  <span className="font-bold">Documents:</span>
+                  {
+                    <ul>
+                      {value.documents.map((value, index) => {
+                        return (
+                          <Link href={`https://utfs.io/f/${value}`} key={index}>
+                            <li>Document {index + 1}</li>
+                          </Link>
+                        );
+                      })}
+                    </ul>
+                  }
+                </div>
               </CardBody>
             </Card>
           );

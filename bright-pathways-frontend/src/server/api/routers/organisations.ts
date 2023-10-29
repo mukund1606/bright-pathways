@@ -11,16 +11,21 @@ type Data = {
   address: string;
   coordinates: string;
   description: string;
+  documents: string[];
+  isVerified: boolean;
 };
 
 export const organisationsRouter = createTRPCRouter({
   getOldAgeHomes: publicProcedure.mutation(async () => {
     const res = await axios.post(
-      "https://bright-pathways-backend.onrender.com/mongo/organisation/search",
+      "http://localhost:5000/mongo/organisation/search",
     );
     const data = res.data as Data[];
     return data
-      .filter((oldAgeHome) => oldAgeHome.type === "OLDAGE_HOME")
+      .filter(
+        (oldAgeHome) =>
+          oldAgeHome.type === "OLDAGE_HOME" && oldAgeHome.isVerified,
+      )
       .map((oldAgeHome) => {
         const { coordinates, ...rest } = oldAgeHome;
         return {
@@ -32,16 +37,20 @@ export const organisationsRouter = createTRPCRouter({
           phone: rest.phone,
           address: rest.address,
           description: rest.description,
+          documents: rest.documents.map((doc) => JSON.parse(doc) as string),
         };
       });
   }),
   getAnimalCare: publicProcedure.mutation(async () => {
     const res = await axios.post(
-      "https://bright-pathways-backend.onrender.com/mongo/organisation/search",
+      "http://localhost:5000/mongo/organisation/search",
     );
     const data = res.data as Data[];
     return data
-      .filter((oldAgeHome) => oldAgeHome.type === "ANIMAL_CARE")
+      .filter(
+        (animalCare) =>
+          animalCare.type === "ANIMAL_CARE" && animalCare.isVerified,
+      )
       .map((animalCare) => {
         const { coordinates, ...rest } = animalCare;
         return {
@@ -53,16 +62,21 @@ export const organisationsRouter = createTRPCRouter({
           phone: rest.phone,
           address: rest.address,
           description: rest.description,
+          documents: rest.documents.map((doc) => JSON.parse(doc) as string),
         };
       });
   }),
   getAdoptionCenters: publicProcedure.mutation(async () => {
     const res = await axios.post(
-      "https://bright-pathways-backend.onrender.com/mongo/organisation/search",
+      "http://localhost:5000/mongo/organisation/search",
     );
     const data = res.data as Data[];
     return data
-      .filter((oldAgeHome) => oldAgeHome.type === "ADOPTION_CENTER")
+      .filter(
+        (adoptionCenters) =>
+          adoptionCenters.type === "ADOPTION_CENTER" &&
+          adoptionCenters.isVerified,
+      )
       .map((adoptionCenters) => {
         const { coordinates, ...rest } = adoptionCenters;
         return {
@@ -74,16 +88,21 @@ export const organisationsRouter = createTRPCRouter({
           phone: rest.phone,
           address: rest.address,
           description: rest.description,
+          documents: rest.documents.map((doc) => JSON.parse(doc) as string),
         };
       });
   }),
   getSpecialSchool: publicProcedure.mutation(async () => {
     const res = await axios.post(
-      "https://bright-pathways-backend.onrender.com/mongo/organisation/search",
+      "http://localhost:5000/mongo/organisation/search",
     );
     const data = res.data as Data[];
     return data
-      .filter((oldAgeHome) => oldAgeHome.type === "SPECIAL_SCHOOLS")
+      .filter(
+        (specialSchools) =>
+          specialSchools.type === "SPECIAL_SCHOOLS" &&
+          specialSchools.isVerified,
+      )
       .map((specialSchools) => {
         const { coordinates, ...rest } = specialSchools;
         return {
@@ -95,6 +114,7 @@ export const organisationsRouter = createTRPCRouter({
           phone: rest.phone,
           address: rest.address,
           description: rest.description,
+          documents: rest.documents.map((doc) => JSON.parse(doc) as string),
         };
       });
   }),

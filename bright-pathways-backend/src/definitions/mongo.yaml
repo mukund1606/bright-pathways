@@ -31,3 +31,9 @@ Organisation:
       type: string
     description:
       type: string
+    documents:
+      type: array
+      items:
+        type: string
+    isVerified:
+      type: boolean
