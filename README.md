@@ -30,6 +30,22 @@ Our project aims to address several key goals:
 
 - _Registration for Facilities_: Service providers can register their facilities easily, ensuring that all the necessary details are available for users to discover.
 
+### Features
+
+- Real-time Facility Locator: The app provides users with a real-time facility locator, making it easy to find the services they need.
+
+- User Reviews and Ratings: Users can access and contribute to facility reviews and ratings.
+
+- Community Engagement: The app promotes community engagement by enabling users to share their experiences and recommendations.
+
+- Accessible Information: Users can access the extensive resource center for educational content, empowering them to make informed decisions.
+
+- Donations and Volunteering: The app facilitates online donations and allows users to discover volunteer opportunities at their chosen organizations.
+
+- Verification of Organizations: Organizations can register and verify their facilities, ensuring that users can trust the information they find.
+
+- Organisation and User Profiles: The app features profiles for both organizations and users, allowing them to login and manage their information.
+
 ### Getting Started
 
 1. _Clone the Repository_: Begin by cloning this repository to your local machine.
