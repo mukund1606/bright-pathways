@@ -10,7 +10,7 @@ import NinthSection from "@/components/Home/NinthSection";
 
 export default function HomePage() {
   return (
-    <div>
+    <div className="pb-8">
       <Hero />
       <Secondsection />
       <ThirdSection />

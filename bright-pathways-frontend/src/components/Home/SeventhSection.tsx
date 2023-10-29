@@ -3,7 +3,7 @@ import { Accordion, AccordionItem, Button } from "@nextui-org/react";
 
 const SeventhSection = () => {
   return (
-    <div className="flex w-full flex-col items-center justify-between gap-8 border px-10 py-20">
+    <div className="flex w-full flex-col items-center justify-between gap-8 border px-4 py-20 md:px-10">
       <div className="w-full space-y-2">
         <h2 className="text-4xl font-bold">FAQs</h2>
         <p>
@@ -59,9 +59,11 @@ const SeventhSection = () => {
           }
         </AccordionItem>
       </Accordion>
-      <div className="w-full space-y-2">
-        <h2 className="text-3xl font-bold">Still have questions?</h2>
-        <p>Contact us for more information or assisrance</p>
+      <div className="flex w-full flex-col justify-between space-y-2 md:flex-row">
+        <div>
+          <h2 className="text-3xl font-bold">Still have questions?</h2>
+          <p>Contact us for more information or assisrance</p>
+        </div>
         <Button className="bg-[#A4D5DD]">Contact Us</Button>
       </div>
     </div>

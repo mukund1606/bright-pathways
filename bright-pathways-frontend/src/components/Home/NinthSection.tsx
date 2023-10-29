@@ -5,8 +5,8 @@ import { Input, Button, Spacer } from "@nextui-org/react";
 const NinthSection = () => {
   return (
     <div className="py-20">
-      <div className="flex items-center justify-between px-10 ">
-        <div className="flex flex-col gap-2 ">
+      <div className="flex flex-col items-center justify-between gap-4 px-4 md:flex-row md:px-10 ">
+        <div className="flex flex-col gap-2">
           <h1 className="font-bold">Logo</h1>
           <div className="flex gap-2">
             <Link href="/" className="text-lg" color="foreground">
@@ -23,7 +23,7 @@ const NinthSection = () => {
             </Link>
           </div>
         </div>
-        <div className="flex flex-col gap-2">
+        <div className="flex w-full flex-col gap-2 md:w-fit">
           <h1 className="font-bold">Subscribe</h1>
           <div className="flex items-center gap-2">
             <Input
@@ -39,15 +39,15 @@ const NinthSection = () => {
           <p>By subscribing you agree to our privacy policy</p>
         </div>
       </div>
-      <div className="flex flex-col px-10 py-10 ">
+      <div className="flex flex-col px-4 py-10 md:px-10 ">
         <div className="h-5 w-full">
           <Spacer className="h-[3px] w-full bg-gray-800/20" />
         </div>
-        <div className="flex items-center justify-between ">
-          <div>
-            <Link href={"/"}>privacy Policy</Link>
-            <Link href={"/"}> Terms of Services </Link>
-            <Link href={"/"}> Cookie settings</Link>
+        <div className="flex items-start justify-between gap-2">
+          <div className="flex flex-col">
+            <Link href="/">Privacy Policy</Link>
+            <Link href="/"> Terms of Services </Link>
+            <Link href="/"> Cookie settings</Link>
           </div>
           <h2> © symbolsDB.com</h2>
         </div>

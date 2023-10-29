@@ -1,28 +1,31 @@
 import React from "react";
 import { Button } from "@nextui-org/react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function HeroSection() {
   return (
-    <div className="flex h-screen ">
-      <div className="flex h-full w-6/12 flex-col  justify-center gap-5 border border-white px-20 ">
-        <div className="w-[70%]">
-          <h1 className=" text-5xl font-bold">
+    <div className="flex flex-col px-4 pt-24 md:h-screen md:flex-row md:px-8 md:pt-0">
+      <div className="flex h-full flex-col gap-5 border border-white md:w-6/12 md:justify-center md:px-20 ">
+        <div className="md:w-[70%]">
+          <h1 className="text-3xl font-bold md:text-4xl lg:text-5xl">
             Find your perfect home for new begining.
           </h1>
         </div>
-        <div className="w-[70%]">
-          <p className="text-lg text-black/70">
+        <div className="md:w-[70%]">
+          <p className="text-black/70 md:text-lg">
             Discover a wide range of old age homes, animals shelters, dog and
             baby adoption centers and blind schools near new.
           </p>
         </div>
-        <div className=" flex  gap-4">
-          <Button className="bg-[#A4D5DD]">Explore</Button>
+        <div className="flex w-full items-center justify-center gap-4 md:justify-start">
+          <Link href="/oldage-home">
+            <Button className="bg-[#A4D5DD]">Explore</Button>
+          </Link>
           <Button className="bg-[#A4D5DD]">Download App</Button>
         </div>
       </div>
-      <div className="flex h-full w-6/12 items-center justify-center border border-white">
+      <div className="flex h-full items-center justify-center border border-white pt-8 md:w-6/12">
         <Image
           src="/mainImg.svg"
           width={500}

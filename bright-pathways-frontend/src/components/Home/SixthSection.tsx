@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function SixthSection() {
   return (
-    <div className="flex w-full flex-col items-center justify-between gap-16 border px-10 py-20">
+    <div className="flex w-full flex-col items-center justify-between gap-16 px-4 py-20 md:px-10">
       <h2 className="text-4xl font-bold">Testimonials</h2>
       <motion.div
         className="grid h-full w-full grid-cols-1 gap-4 md:grid-cols-3"

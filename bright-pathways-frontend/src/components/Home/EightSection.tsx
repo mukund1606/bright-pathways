@@ -3,7 +3,7 @@ import Link from "next/link";
 import React from "react";
 const EightSection = () => {
   return (
-    <div className="grid grid-cols-4 px-10 py-10">
+    <div className="grid grid-cols-2 gap-2 px-4 py-10 md:grid-cols-4 md:px-10">
       <div className="flex flex-col gap-1">
         <Mail size={30} />
         <h1 className="text-lg font-bold">Email</h1>
