@@ -70,9 +70,9 @@ Firebase serves as the backend for our mobile app, providing a robust infrastruc
 
 Please note that setting up and deploying Firebase services for the mobile app may vary based on your hosting environment. Ensure that security best practices are followed when deploying these services to protect user data.
 
-### Website Backend (GodSpeed)
+### Website Backend (God Speed)
 
-For the website, our backend services are developed using "GodSpeed". This backend infrastructure is responsible for handling data related to the website, including user reviews, facility registrations, and the resource center. "GodSpeed" provides the necessary support for the website's functionalities and ensures that users can access the services and information they need.
+For the website, our backend services are developed using "God Speed". This backend infrastructure is responsible for handling data related to the website, including user reviews, facility registrations, and the resource center. "God Speed" provides the necessary support for the website's functionalities and ensures that users can access the services and information they need.
 
 Setting up and deploying the "GodSpeed" backend services may differ from Firebase and should be handled according to the specific requirements of this technology.
 
