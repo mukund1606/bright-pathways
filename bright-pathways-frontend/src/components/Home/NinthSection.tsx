@@ -1,13 +1,21 @@
 import Link from "next/link";
 import React from "react";
 import { Input, Button, Spacer } from "@nextui-org/react";
+import Image from "next/image";
 
 const NinthSection = () => {
   return (
     <div className="py-20">
       <div className="flex flex-col items-center justify-between gap-4 px-4 md:flex-row md:px-10 ">
         <div className="flex flex-col gap-2">
-          <h1 className="font-bold">Logo</h1>
+          <h1 className="font-bold">
+            <Image
+              src="/logo.png"
+              alt="Bright Pathways Logo"
+              width={100}
+              height={100}
+            />
+          </h1>
           <div className="flex gap-2">
             <Link href="/" className="text-lg" color="foreground">
               Find Homes

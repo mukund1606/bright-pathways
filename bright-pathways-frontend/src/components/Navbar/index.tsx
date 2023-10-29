@@ -2,18 +2,22 @@ import { getServerAuthSession } from "@/server/auth";
 import { Button, Link } from "@nextui-org/react";
 import MobileNav from "./mobileNav";
 import SignOutButton from "../SignOutButton";
+import Image from "next/image";
 
 export const Navbar = async () => {
   const session = await getServerAuthSession();
   return (
     <>
-      <nav className="fixed top-0 z-[9999] flex w-full items-center justify-between bg-white px-8 py-5">
+      <nav className="fixed top-0 z-[9999] flex w-full items-center justify-between border-b bg-white px-8 py-2 shadow-lg">
         <div>
-          <Link
-            href="/"
-            className="rounded-full border bg-black p-2 text-center text-2xl font-bold text-white"
-          >
-            BP
+          <Link href="/">
+            <Image
+              src="/logo.png"
+              alt="Bright Pathways Logo"
+              width={100}
+              height={100}
+              className="h-24 w-24"
+            />
           </Link>
         </div>
         <div className="flex items-center gap-5">
