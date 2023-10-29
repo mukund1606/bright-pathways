@@ -153,7 +153,7 @@ export const authOptions: NextAuthOptions = {
         if (credentials.isLogin === "true") {
           if (credentials.role === "user") {
             const res = await axios.get(
-              `http://localhost:5000/mongo/user/email/${credentials.email}`,
+              `https://bright-pathways-backend.onrender.com/mongo/user/email/${credentials.email}`,
             );
             const user = res.data as userDataType;
             if (user.password === credentials.password) {
@@ -164,7 +164,7 @@ export const authOptions: NextAuthOptions = {
             }
           } else if (credentials.role === "organisation") {
             const res = await axios.get(
-              `http://localhost:5000/mongo/organisation/email/${credentials.email}`,
+              `https://bright-pathways-backend.onrender.com/mongo/organisation/email/${credentials.email}`,
             );
             const user = res.data as orgDataType;
             if (user.password === credentials.password) {
@@ -183,7 +183,7 @@ export const authOptions: NextAuthOptions = {
               password: credentials.password,
             };
             const res = await axios.post(
-              `http://localhost:5000/mongo/user`,
+              `https://bright-pathways-backend.onrender.com/mongo/user`,
               dataToSend,
             );
             const user = res.data as userDataType;
@@ -206,7 +206,7 @@ export const authOptions: NextAuthOptions = {
               documents: credentials.documents,
             };
             const res = await axios.post(
-              `http://localhost:5000/mongo/organisation`,
+              `https://bright-pathways-backend.onrender.com/mongo/organisation`,
               dataToSend,
             );
             const user = res.data as orgDataType;
